@@ -1,0 +1,212 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.tab{
+    display:table;
+    margin:15px;
+    collapse: collapse;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+}
+
+.Th{
+    display:table-row;
+    background-color: #bab5b5;
+    text-align:center;
+    font-weight:bold;
+}
+
+.Tr{
+    display:table-row
+}
+/*表头*/
+.titleTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom: 1px solid #000000;
+}
+
+.timeTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000
+}
+
+.provinceTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.cityTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.ageTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.faceTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.expensesTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.servicesTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.introductionTh{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.picsTh{
+    width:200px;
+    display:table-cell;
+    border-bottom:1px solid #000;
+}
+/*表格内*/
+.titleTd{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.timeTd{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.provinceTd{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.cityTd{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.ageTd{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.faceTd{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.expensesTd{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.servicesTd{
+    width:200px;
+    display:table-cell;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.picsTd{
+    width:200px;
+    display:table-cell;
+    border-bottom:1px solid #000;
+    text-align:center;
+}
+
+.pic{
+    width: 50px;
+    height: 50px;
+}
+
+.searchBar{
+    border:0px solid black;
+    margin-top:20px;
+    margin-left:20px;
+    margin-right:20px;
+    text-align:center;
+}
+
+.kwd{
+    width:500px;
+    height:35px;
+    border:none;
+}
+
+.search{
+    width: 200px;
+}
+
+button{
+    width:60px
+}
+
+label{
+    margin-left:20px;
+}
+
+.addition{
+    text-align:center;
+    display:none;
+    padding:20px;
+    margin-left:20px;
+    margin-right:20px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+select{
+    width:150px;
+    height:30px;
+    font-size:15px;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <script src="/js/footer.js"></script>
+</head>
+<body>
+<form id="searchFrom" method="GET">
+    <label for="kwd">搜索信息</label>
+    <input id="kwd" class="kwd" type="text" name="search" placeholder="search..." onkeydown="keydownToSearch()">
+
+    <label for="province">省份:</label>
+    <select id="province" name="province" onchange="updateCities()">
+        <option value="全部" selected>全部</option>
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="天津">天津</option>
+        <option value="重庆">重庆</option>
+        <option value="河北">河北</option>
+        <option value="陕西">陕西</option>
+        <option value="山西">山西</option>
+        <option value="辽宁">辽宁</option>
+        <option value="吉林">吉林</option>
+        <option value="黑龙江">黑龙江</option>
+        <option value="江苏">江苏</option>
+        <option value="浙江">浙江</option>
+        <option value="安徽">安徽</option>
+        <option value="福建">福建</option>
+        <option value="江西">江西</option>
+        <option value="山东">山东</option>
+        <option value="河南">河南</option>
+        <option value="四川">四川</option>
+        <option value="贵州">贵州</option>
+        <option value="云南">云南</option>
+        <option value="甘肃">甘肃</option>
+        <option value="青海">青海</option>
+        <option value="内蒙古">内蒙古</option>
+        <option value="广西">广西</option>
+        <option value="西藏">西藏</option>
+        <option value="宁夏">宁夏</option>
+        <option value="新疆">新疆</option>
+        <option value="海南">海南</option>
+        <option value="湖北">湖北</option>
+        <option value="湖南">湖南</option>
+        <option value="广东">广东</option>
+    </select>
+
+    <label for="city">城市:</label>
+    <select id="city" name="city" disabled>
+        <option value="" selected>全部</option>
+    </select>
+
+    <input type="submit" class="search" value="Search">
+</form>
+
+<form id="pageForm" method="GET">
+    <label for="page">页:</label>
+    <select id="page" name="page">
+        {{range .Pagination}}
+        <option value="{{.}}">{{.}}</option>
+        {{end}}
+    </select>
+
+    <input type="submit" class="search" value="Page">
+</form>
+
+<button type="button" onclick="addition()">更多</button>
+
+<div class="addition" id="addition">
+    <label for="age">年龄:</label>
+    <select id="age">
+        <option value="全部" selected>全部</option>
+        <option value="嫩妹">嫩妹(18-22)</option>
+        <option value="年轻">年轻(23-29)</option>
+        <option value="少妇">少妇(30-39)</option>
+        <option value="熟女">熟女(40+)</option>
+    </select>
+    <label for="minPrice">价格下限:</label>
+    <select id="minPrice">
+        <option value="0" selected>0</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+        <option value="600">600</option>
+        <option value="700">700</option>
+        <option value="800">800</option>
+        <option value="900">900</option>
+        <option value="1000">1000</option>
+        <option value="1500">1500</option>
+        <option value="2000">2000</option>
+    </select>
+    <label for="maxPrice">价格上限:</label>
+    <select id="maxPrice">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+        <option value="500">500</option>
+        <option value="600">600</option>
+        <option value="700">700</option>
+        <option value="800">800</option>
+        <option value="900">900</option>
+        <option value="1000">1000</option>
+        <option value="1500">1500</option>
+        <option value="2000">2000</option>
+        <option value="无上限" selected>无上限</option>
+    </select>
+</div>
+
+<h2>相关结果共{{.Total}}个。</h2>
+
+{{if .Exists}}
+<div class="tab">
+    <div class="Th">
+        <div class="titleTh">标题</div>
+        <div class="timeTh">发布时间</div>
+        <div class="provinceTh">所在省份</div>
+        <div class="cityTh">所在市</div>
+        <div class="ageTh">年龄</div>
+        <div class="faceTh">颜值</div>
+        <div class="expensesTh">价格</div>
+        <div class="servicesTh">服务</div>
+        <div class="picsTh">图片</div>
+    </div>
+    {{range .Items}}
+    <div class="Tr">
+        <div class="titleTd">
+            <a href="{{.Url}}" target="_blank">{{.Title}}</a>
+        </div>
+        <div class="timeTd">
+            <p>空</p>
+            <!--{{.FetchTime}}-->
+        </div>
+        <div class="provinceTd">
+            {{.Province}}
+        </div>
+        <div class="cityTd">
+            {{.City}}
+        </div>
+        <div class="ageTd">
+            {{.Age}}
+        </div>
+        <div class="faceTd">
+            {{.FaceValue}}
+        </div>
+        <div class="expensesTd">
+            {{.Expenses}}
+        </div>
+        <div class="servicesTd">
+            {{.Services}}
+        </div>
+        <div class="picsTd">
+            {{range .Pics}}
+            <img  class="pic" src="{{.}}">
+            {{end}}
+        </div>
+    </div>
+    {{end}}
+</div>
+{{else}}
+<div>没有找到相关数据。</div>
+{{end}}
+
+</body>
+</html>
